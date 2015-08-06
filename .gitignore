@@ -32,6 +32,7 @@ attributes/higley.rb
 attributes/higleycloud.rb
 attributes/mso.rb
 attributes/standalone.rb
+attributes/mcpcbackup.rb
 
 # Recipes
 recipes/printers_higley.rb
