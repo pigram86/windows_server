@@ -1,0 +1,97 @@
+.vagrant
+Berksfile.lock
+.berksfile/*
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+/cookbooks
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*
+
+# Chef
+.chef/*.pem
+.chef/*.rb
+.chef/*.*
+.chef/encrypted_data_bag_secret
+
+# Attributes
+attributes/ccpstack.rb
+attributes/activation.rb
+attributes/clevcloud.rb
+attributes/colvcloud.rb
+attributes/daas.rb
+attributes/mcpc.rb
+attributes/msdgc.rb
+attributes/higley.rb
+attributes/higleycloud.rb
+attributes/mso.rb
+attributes/standalone.rb
+
+# Recipes
+recipes/printers_higley.rb
+recipes/rdsl_clevcloud.rb
+recipes/rdsl_daas.rb
+recipes/rdsl_higley.rb
+recipes/rdsl_higleycloud.rb
+recipes/task_higleycgc_ping.rb
+recipes/activation.rb
+
+# Ruby
+.rake_test_cache
+.rvmrc
+.rbenv-version
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Emacs org-mode
+.org-id-locations
+*_archive
+
+# SublimeText
+*.sublime-workspace
+
+# TextMate
+*.tmproj
+*.tmproject
+tmtags
+
+# Vim
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+.kitchen/
+.kitchen.local.yml
+
+
