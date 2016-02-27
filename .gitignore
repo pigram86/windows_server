@@ -95,4 +95,6 @@ $RECYCLE.BIN/
 .kitchen/
 .kitchen.local.yml
 
-
+#templates
+templates/default/clehosts.erb
+templates/default/hosts.erb

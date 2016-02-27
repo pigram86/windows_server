@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: windows_server
-# Recipe:: timesync
+# Recipe:: WSearch
 #
 # Copyright (C) 2015 Todd Pigram
 #
@@ -16,28 +16,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-service 'w32time' do
-  action :stop
-  not_if {reboot_pending?}
-end
-
-batch "timesync" do
+batch "recovery" do
   code <<-EOH
-  w32tm /config /syncfromflags:manual /manualpeerlist:"time-a.nist.gov, time-b.nist.gov, time-c.nist.gov"
-  w32tm /config /reliable:yes
+  sc config "WSearch" start= delayed-auto
+  sc failure "WSearch"  actions= restart/60000/restart/60000/restart/60000 reset= 60
   EOH
   not_if {reboot_pending?}
 end
 
-service 'w32time' do
-  action [:start, :enable]
-  not_if {reboot_pending?}
-end
 
-batch "resync" do
-  code <<-EOH
-  w32tm /resync
-  EOH
-  not_if {reboot_pending?}
+service 'WSearch' do
+  provider Chef::Provider::Service::Windows
+  action :start
 end

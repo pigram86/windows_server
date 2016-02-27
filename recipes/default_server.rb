@@ -16,13 +16,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+
+
 if node[:os_version] >= '6.2'
   %w{ File-Services CoreFileServer File-Services-Search-Service WindowsServerBackup NetFx3ServerFeatures NetFx3 ServerManager-Core-RSAT ServerManager-Core-RSAT-Role-Tools RSAT-AD-Tools-Feature RSAT-ADDS-Tools-Feature }.each do |feature|
     windows_feature feature do
       action :install
       not_if {reboot_pending?}
     end
-  end  
+  end
 else
   powershell_script "default" do
     code <<-EOH
@@ -71,7 +74,7 @@ else
   end
 end
 
-windows_reboot 30 do
+windows_reboot 90 do
   reason 'A System Restart has been requested. Rebooting now..'
   only_if {reboot_pending?}
 end

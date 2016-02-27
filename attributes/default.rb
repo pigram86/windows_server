@@ -60,3 +60,5 @@ default['rds']['key'] = "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Termin
 #SNMP Config
 default['snmp']['community'] = "HKLM\\SYSTEM\\CurrentControlSet\\Services\\SNMP\\Parameters\\ValidCommunities"
 
+#iis
+default['iis']['install'] = %w{ IIS-WebServerRole IIS-ISAPIFilter IIS-ISAPIExtensions NetFx4Extended-ASPNET45 IIS-NetFxExtensibility45 IIS-ASPNET45 }
